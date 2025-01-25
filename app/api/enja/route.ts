@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { corsHeaders } from "../corsHeaders";
-import { parseOpenAI_apiKey } from "../ja3/parseOpenAI_apiKey";
-import { MixReadInput } from "./MixReadInput";
-import { MixReadOutput } from "./MixReadOutput";
+import { MixReadInput } from "../MixReadInput";
+import { MixReadOutput } from "../MixReadOutput";
+import { parseOpenAI_apiKey } from "../parseOpenAI_apiKey";
 const getPrompt = (text: string) => `
 Objective: Convert texts into a highly mixed Japanese-English format while maintaining high readability.
 Steps:
