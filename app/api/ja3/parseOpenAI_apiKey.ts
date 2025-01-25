@@ -10,12 +10,12 @@ export async function parseOpenAI_apiKey(req: Request) {
     if (key.startsWith("sk-")) {
       // openai key
       return key;
-    } else if (key.startsWith("snolab-") && ) {
-      if(key === process.env.SNOLAB_TOKEN){
-      // openai key
-      return process.env.OPENAI_API_KEY;
-    }
-    DIEError("snolab-key mismatch");
+    } else if (key.startsWith("snolab-")) {
+      if (key === process.env.SNOLAB_TOKEN) {
+        // openai key
+        return process.env.OPENAI_API_KEY;
+      }
+      DIEError("snolab-key mismatch");
     } else {
       DIEError("unsupported key");
     }
