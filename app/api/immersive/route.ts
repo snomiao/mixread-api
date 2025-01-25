@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { parseOpenAI_apiKey } from "../parseOpenAI_apiKey";
 
 const exampleReplace = (s: string) => {
   const obj = {
@@ -18,9 +19,10 @@ Mixed Japanese-English Text: 答えは肯定的です。この漢字は、repres
 };
 
 export const POST = async (req: Request) => {
+  const apiKey = await parseOpenAI_apiKey(req);
   const input = await req.json();
   const messages = JSON.parse(exampleReplace(JSON.stringify(input.messages)));
-  const ret = await new OpenAI().chat.completions.create({
+  const ret = await new OpenAI({ apiKey }).chat.completions.create({
     model: "gpt-4o-mini",
     messages,
     temperature: 0.3,
