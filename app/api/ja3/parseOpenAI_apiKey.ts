@@ -9,11 +9,11 @@ export async function parseOpenAI_apiKey(req: Request) {
     if (key.startsWith("sk-")) {
       // openai key
       return key;
+    } else if (key.startsWith("snolab-")) {
+      // openai key
+      return process.env.OPENAI_API_KEY;
     } else {
       DIEError("unsupported key");
-      // snolab key
-      // snolab-
-      return "";
     }
   })();
 }
