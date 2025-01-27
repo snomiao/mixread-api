@@ -16,7 +16,9 @@ End goal: Produce a text that seamlessly blends Japanese and English, catering t
 
 Source Text: "答案是肯定的。以汉字为代表的意音方块字，作为一个复杂的文字符号系统，其信息熵很高。"
 Mixed Triple Japanese-English Text:
-当然 / はい / その通り, |||| 意音文字である漢字は複雑な文字システムであり、情報エントロピーが高いです。/ 形声文字である漢字は複雑な記号システムとして情報量が多いです。/ 意味を表す漢字は、複雑な表記体系であり、情報のエントロピーが高いです。
+当然、意音文字である漢字は複雑な文字システムであり、情報エントロピーが高いです。
+はい、形声文字である漢字は複雑な記号システムとして情報量が多いです。
+その通り, 意味を表す漢字は、複雑な表記体系であり、情報のエントロピーが高いです。
 
 Source Text: ${JSON.stringify(text)}
 Mixed Triple Japanese-English Text:
